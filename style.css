@@ -1,0 +1,189 @@
+/* ========================================================
+   Restaurant Management System - Week 1 Stylesheet
+   ======================================================== */
+
+/* 1. CSS Variables - Shows good practice for a B.Tech project */
+:root {
+    --bg-color: #fdfbf7; /* Warm, off-white background */
+    --primary-color: #e15f41; /* Appetizing restaurant orange/red */
+    --text-dark: #2d3436;
+    --border-dark: #1e272e;
+}
+
+/* 2. Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 3. Main Container - Using a bold, hard-shadow aesthetic */
+.container {
+    width: 100%;
+    max-width: 600px;
+    background-color: #ffffff;
+    /* Thick borders and a solid shadow make it look highly custom */
+    border: 3px solid var(--border-dark);
+    box-shadow: 8px 8px 0px var(--border-dark); 
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 40px;
+}
+
+/* 4. Typography */
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 1.5rem;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary-color);
+    margin: 8px auto 0;
+}
+
+/* 5. Form Layout */
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+/* 6. Inputs & Selects */
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 2px solid var(--border-dark);
+    border-radius: 4px;
+    background-color: #fafafa;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Removes default resizing on textarea to keep layout clean */
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Focus state - very important for accessibility (professors check this!) */
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background-color: #ffffff;
+    box-shadow: 4px 4px 0px rgba(225, 95, 65, 0.2);
+}
+
+/* 7. The Submit Button */
+button {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #ffffff;
+    background-color: var(--border-dark);
+    border: 2px solid var(--border-dark);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+button:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* Press effect for the button */
+button:active {
+    transform: translateY(2px);
+}
+
+/* 8. The Data Table (Prepping for Week 2) */
+table {
+    width: 100%;
+    max-width: 800px;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border: 3px solid var(--border-dark);
+    box-shadow: 6px 6px 0px var(--border-dark);
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: var(--border-dark);
+    color: #ffffff;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+/* Zebra striping for easy reading */
+tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+tr:hover {
+    background-color: rgba(225, 95, 65, 0.1);
+}
+/* 9. Action Buttons (Edit/Delete in Table) */
+.action-btn {
+    width: auto;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    margin-right: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    border: 2px solid var(--border-dark);
+    text-transform: uppercase;
+}
+
+.edit-btn {
+    background-color: #f1c40f; /* Warning Yellow */
+    color: var(--text-dark);
+}
+
+.delete-btn {
+    background-color: #e74c3c; /* Danger Red */
+    color: #ffffff;
+}
+
+/* Ensure the table cell doesn't wrap the buttons awkwardly */
+td .action-btn {
+    display: inline-block;
+    margin-bottom: 4px;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Add Menu Item</h2>
+        
+        <form id="foodForm">
+            <div class="form-group">
+                <label for="name">Item Name</label>
+                <input type="text" id="name" name="name" placeholder="e.g., Garlic Bread" required>
+            </div>
+
+            <div class="form-group">
+                <label for="price">Price (₹)</label>
+                <input type="number" id="price" name="price" placeholder="e.g., 150" required>
+            </div>
+
+            <div class="form-group">
+                <label for="category">Category</label>
+                <select id="category" name="category" required>
+                    <option value="">Select a category</option>
+                    <option value="Starter">Starter</option>
+                    <option value="Main Course">Main Course</option>
+                    <option value="Dessert">Dessert</option>
+                    <option value="Beverage">Beverage</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea id="description" name="description" placeholder="Brief details about the dish..." required></textarea>
+            </div>
+
+            <button type="submit" id="submitBtn">Save Item</button>
+        </form>
+    </div>
+
+    <h2>Current Menu</h2>
+    <table id="foodTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody id="foodTableBody">
+            </tbody>
+    </table>
+
+    <script src="app.js"></script>
+</body>
+</html>
